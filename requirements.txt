@@ -1,0 +1,6 @@
+streamlit==1.37.1
+requests==2.32.3
+reportlab==4.2.2
+matplotlib==3.9.2
+pandas==2.2.2
+python-dotenv==1.0.1
