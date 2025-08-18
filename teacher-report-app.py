@@ -7,10 +7,11 @@ import requests
 import pandas as pd
 import streamlit as st
 from typing import Dict, Any, Tuple, List, Optional
+import streamlit as st
 
 # ---------- .env ----------
-from dotenv import load_dotenv
-load_dotenv()
+# from dotenv import load_dotenv
+# load_dotenv()
 
 # ---------- ReportLab (PDF) ----------
 from reportlab.lib.pagesizes import A4
@@ -41,11 +42,11 @@ def get_cfg(key: str, default: str = "") -> str:
 # =========================
 # Config from .env
 # =========================
-REDASH_URL      = get_cfg("REDASH_URL")
-REDASH_API_KEY  = get_cfg("REDASH_API_KEY")
-REDASH_QUERY_ID = get_cfg("REDASH_QUERY_ID")
-TEST_API_URL    = get_cfg("TEST_API_URL")
-TEACHER_NAME    = get_cfg("TEACHER_NAME", "Teacher")
+REDASH_URL = st.secrets["REDASH_URL"]
+REDASH_API_KEY = st.secrets["REDASH_API_KEY"]
+REDASH_QUERY_ID = st.secrets["REDASH_QUERY_ID"]
+TEST_API_URL = st.secrets["TEST_API_URL"]
+TEACHER_NAME = st.secrets.get("TEACHER_NAME", "Teacher")
 
 # =========================
 # Utilities
